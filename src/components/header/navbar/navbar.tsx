@@ -6,19 +6,19 @@ export const Navbar = () => {
   return (
     <>
       {/* Section 1: Navigation bar container */}
-      <nav className="bg-white shadow">
+      <nav className="bg-white shadow sticky">
         <div className="container mx-auto px-4">
           {/* Section 2: Navigation bar content */}
           <div className="flex justify-between items-center py-4">
             {/* Section 3: Logo and navigation links */}
             <div className="flex items-center">
               <NavbarLogo />
-              <ul className="flex space-x-4 ml-8">
+              <ul className="flex space-x-4 ml-8 hidden md:block">
                 <NavigationMenuLinks />
               </ul>
             </div>
             {/* Section 4: Call-to-action */}
-            <div className="flex space-x-2 flex items-center">
+            <div className="flex space-x-2 flex items-center hidden md:block">
               <Cta />
             </div>
           </div>

@@ -1,24 +1,92 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
-import { Footer } from "@/components/custom-ui/footer/footer";
-import { Navbar } from "@/components/custom-ui/header/navbar/navbar";
-import { Hero } from "@/components/custom-ui/landing-page/hero/hero";
 
 const Home: React.FC = () => {
   return (
-    <>
-      {/* Section 1: Navigation */}
-      <section aria-label="Navigation">
-        <Navbar />
+    <div className="container mx-auto my-10">
+      <section aria-label="Intro" className="container-fluid">
+        {/* Section 1 */}
+        {/* Introduction  */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-4">Get Started</h1>
+          <p className="mb-4">
+            Welcome to our platform dedicated to testing and refining a
+            collection of frequently used layout components.
+          </p>
+          <p>
+            Explore the various layout components showcased here, each with its
+            own dedicated page, to see how they can enhance your web projects.
+          </p>
+        </div>
+
+        <hr className="my-8 border-gray-300" />
+
+
+        {/* Section 2  */}
+        {/* Component Conventional Collapse */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">
+            Layout Component: Conventional Collapse
+          </h2>
+          <p className="mb-4">
+            Discover a layout component employing a conventional collapse
+            method, where right cells follow left cells.
+          </p>
+          <div className="mb-4">
+            <p>{`Expanded view(desktop view):`}</p>
+            <pre className="bg-gray-100 p-2 rounded">
+              R1C1 R1C2 <br />
+              R2C1 R2C2
+            </pre>
+            <p>{`Collapsed view(mobile view):`}</p>
+            <pre className="bg-gray-100 p-2 rounded">
+              R1C1 <br />
+              R1C2 <br />
+              R2C1 <br />
+              R2C2
+            </pre>
+          </div>
+          <Link className="mr-2" href="/conventional-collapse">
+            <Button>Non Draggable</Button>
+          </Link>
+          <Link href="/drag-conventional-collapse">
+            <Button>Draggable</Button>
+          </Link>
+        </div>
+
+        <hr className="my-8 border-gray-300" />
+
+        {/* Section 3 */}
+        {/* Component Reversed Collapse */}
+        <div>
+          <h2 className="text-2xl font-bold mb-4">
+            Layout Component: Reversed Collapse
+          </h2>
+          <p className="mb-4">
+            Dive into a layout component utilizing an unconventional collapse
+            method, where right cells precede left cells.
+          </p>
+          <div className="mb-4">
+          <p>{`Expanded view(desktop view):`}</p>
+            <pre className="bg-gray-100 p-2 rounded">
+              R1C1 R1C2 <br />
+              R2C1 R2C2
+            </pre>
+            <p>{`Collapsed view(mobile view):`}</p>
+            <pre className="bg-gray-100 p-2 rounded">
+              R1C2 <br />
+              R1C1 <br />
+              R2C2 <br />
+              R2C1
+            </pre>
+          </div>
+          <Link href="/reversed-collapse">
+            <Button>Explore Component</Button>
+          </Link>
+        </div>
       </section>
-      {/* Section 2: Hero */}
-      <section aria-label="Hero">
-        <Hero />
-      </section>
-      {/* Section 3: Footer */}
-      <section aria-label="Footer">
-        <Footer></Footer>
-      </section>
-    </>
+    </div>
   );
 };
 
@@ -29,56 +97,39 @@ export default Home;
  * File Name : page.tsx
  * Component Name : Home
  * Component Type : Home Component
- * Dev Initials : Aniket Raj
- * Date Created : 2024-04-04
+ * Dev Initials : Elias Emon
+ * Date Created : 2024-05-13
  * ------------------------------
  * Question: Why was it necessary to create this component?
- * Answer: This component was created to serve as the main home page of the
- * website. It combines various sections and components to create a complete
- * and symmetrical landing page experience for users.
- *
+ * 
+ * Answer: This component was necessary to serve as the homepage of the application. It provides an introduction to the platform and showcases various layout components available for exploration.
+ * 
  * ------------------------------
  * Question: What does this component do?
- * Answer: The Home component renders the main sections of the home page,
- * including the navigation bar (Navbar), hero section (Hero), and footer
- * (Footer). It imports and utilizes these separate components to create a
- * structured and visually appealing layout for the home page.
- *
+ * 
+ * Answer: This component renders the homepage of the application, containing an introduction section and sections for showcasing different layout components with descriptions and buttons for exploration.
+ * 
  * ------------------------------
  * Section Comments:
- * Section 1: Navigation
- * This section contains the Navbar component, which represents the
- * navigation bar of the website. It is wrapped within a <section> tag and
- * labeled using the aria-label attribute for accessibility purposes.
+ * Section 1: Renders the introduction section of the homepage with a brief welcome message and instructions on how to explore the layout components.
  *
- * Section 2: Hero
- * This section contains the Hero component, which represents the main hero
- * section of the home page. It is wrapped within a <section> tag and
- * labeled using the aria-label attribute for accessibility purposes.
+ * Section 2: Renders a section for the Conventional Collapse layout component, providing a description, expanded and collapsed view examples, and buttons for navigating to different pages related to this component.
  *
- * Section 3: Footer
- * This section contains the Footer component, which represents the footer
- * of the website. It is wrapped within a <section> tag and labeled using
- * the aria-label attribute for accessibility purposes.
+ * Section 3: Renders a section for the Reversed Collapse layout component, providing a description, expanded and collapsed view examples, and a button for navigating to the page related to this component.
  *
  * ------------------------------
  * Input Comments:
- * The Home component does not receive any input props.
+ * 
+ * None required.
  *
  * ------------------------------
  * Output Comments:
- * The component outputs the main sections of the home page, including the
- * navigation bar, hero section, and footer. These sections are rendered
- * using separate components (Navbar, Hero, Footer) to promote code
- * modularity and reusability.
+ * 
+ * This component outputs the rendered HTML structure of the homepage, including introduction, description, examples, and navigation buttons.
  *
  * ------------------------------
  * Additional Comments:
  * Question: Did you have to write any unusual code?
- * Answer: No, the code in this component follows a common pattern for
- * creating a home page using React components. The component imports and
- * utilizes separate components for each section, promoting code modularity
- * and reusability. The use of the aria-label attribute for section names
- * is a good practice for accessibility.
+ * Answer: No unusual code was written for this component.
  *
  */
